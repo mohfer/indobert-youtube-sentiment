@@ -1,9 +1,10 @@
 [project]
-name = "sentiment"
+name = "indobert-youtube-sentiment"
 version = "0.1.0"
-description = "Add your description here"
+description = "A sentiment analysis model trained on YouTube comments using IndoBERT."
 readme = "README.md"
 requires-python = ">=3.11"
+
 dependencies = [
     "accelerate>=1.13.0",
     "beautifulsoup4>=4.14.3",
@@ -11,9 +12,28 @@ dependencies = [
     "evaluate>=0.4.6",
     "huggingface-hub>=1.16.4",
     "lxml>=6.1.1",
-    "pandas>=3.0.3",
-    "scikit-learn>=1.8.0",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.5.2",
     "selenium>=4.44.0",
-    "torch>=2.12.0",
-    "transformers>=5.9.0",
+    "transformers>=4.46.3",
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+    "torchaudio>=2.5.1",
+    "python-dotenv>=1.2.2",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu121" },
+]
+torchvision = [
+    { index = "pytorch-cu121" },
+]
+torchaudio = [
+    { index = "pytorch-cu121" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true

@@ -5,15 +5,20 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
 
+import os
 import time
 import json
 from pathlib import Path
+from dotenv import load_dotenv
 
-VIDEO_URL = "https://www.youtube.com/watch?v=0J-g47xMUms"
+load_dotenv()
+
+VIDEO_URL = os.getenv("VIDEO_URL", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 VIDEO_ID = VIDEO_URL.split("v=")[-1]
 
-TARGET_COMMENT = 200
+TARGET_COMMENT = os.getenv("TARGET_COMMENT", 200)
+TARGET_COMMENT = int(TARGET_COMMENT)
 
 options = Options()
 

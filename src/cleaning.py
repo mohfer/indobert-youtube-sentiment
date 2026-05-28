@@ -1,6 +1,8 @@
 import os
 import json
 import re
+import csv
+from split import split_cleaned_data
 
 INPUT_DIR = "scrape"
 OUTPUT_DIR = "cleaned"
@@ -66,7 +68,7 @@ for filename in os.listdir(INPUT_DIR):
 
     output_path = os.path.join(
         OUTPUT_DIR,
-        filename
+        filename.replace(".json", ".csv")
     )
 
     with open(
@@ -98,16 +100,16 @@ for filename in os.listdir(INPUT_DIR):
     with open(
         output_path,
         "w",
-        encoding="utf-8"
+        encoding="utf-8",
+        newline=""
     ) as f:
-
-        json.dump(
-            cleaned_data,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
+        writer.writerow(["content"])
+        for row in cleaned_data:
+            writer.writerow([row["content"]])
 
     print(
         f"cleaned: {filename}"
     )
+
+split_cleaned_data()

@@ -10,9 +10,13 @@ wheels/
 .venv
 
 # Data and model files
-models/
 checkpoints/
-logs/
 cleaned/
 data/
+models/
 scrape/
+splits/
+logs/
+
+# Environment variables
+.env
