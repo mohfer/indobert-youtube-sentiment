@@ -151,12 +151,6 @@ uv add torch torchvision torchaudio --index pytorch-cu121
 
 You can run the entire pipeline through the `main.py` entry script.
 
-### Default Pipeline (Scrape -> Clean & Split)
-
-```bash
-uv run main.py
-```
-
 ### Data Preparation Pipeline (Scrape -> Clean -> Label)
 
 Run the end-to-end data preparation (stops before merge and train for manual inspection):
