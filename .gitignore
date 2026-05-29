@@ -14,7 +14,7 @@ checkpoints/
 cleaned/
 data/
 models/
-scrape/
+scraped/
 splits/
 logs/
 

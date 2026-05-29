@@ -1,7 +1,9 @@
 import csv
 import math
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 INPUT_DIR = "cleaned"
 OUTPUT_DIR = "splits"

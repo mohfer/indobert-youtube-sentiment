@@ -2,9 +2,9 @@ import os
 import json
 import re
 import csv
-from split import split_cleaned_data
+from splitting import split_cleaned_data
 
-INPUT_DIR = "scrape"
+INPUT_DIR = "scraped"
 OUTPUT_DIR = "cleaned"
 
 os.makedirs(
